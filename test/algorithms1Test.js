@@ -25,6 +25,11 @@ describe("Array.prototype methods", function() {
     it("should return the new length of the array", function() {
       expect(array.push2("Albert")).to.deep.equal(4);
     });
+
+    it("should take an arbitrary number of inputs, adding them in order", function() {
+      array.push2("Albert","Lexi","Maggie");
+      expect(array).to.deep.equal(["Steve", "Colin", "Ted", "Albert","Lexi","Maggie"]);
+    });
   });
 
   describe("pop", function() {
@@ -82,6 +87,11 @@ describe("Array.prototype methods", function() {
 
     it("should return the new length of the array", function() {
       expect(array.unshift2("Albert")).to.deep.equal(4);
+    });
+
+    it("should take an arbitrary number of inputs, unshifting from last to first", function() {
+      array.unshift2("Albert","Lexi","Maggie");
+      expect(array).to.deep.equal(["Albert","Lexi","Maggie", "Steve", "Colin", "Ted"]);
     });
   });
 });
